@@ -14,7 +14,7 @@ let scssTask = () => {
         autoprefixer({
             browsers: ['last 4 version', 'ie >= 8', 'edge >= 15']
         }),
-        // cssnano()
+        cssnano()
     ];
     return src('./src/sass/**/*.scss')
     .pipe(sass())
