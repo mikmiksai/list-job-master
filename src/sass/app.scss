@@ -1,0 +1,238 @@
+@use 'variables' as v;
+:root {
+  font-size: v.$font-size;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  background-color: v.$grayish-cyan;
+  font-family: v.$font-family;
+}
+button {
+  outline: none;
+  font-family: v.$font-family;
+}
+.header{
+  background-color: v.$primary-color;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  z-index: -1;
+  & .desktop{
+    display: none;
+    @media screen and (min-width: 375px) {
+      display: block;
+    }
+  }
+  & .mobile{
+    display: block;
+    @media screen and (min-width: 375px) {
+      display: none;
+    }
+  }
+}
+.container {
+  width: 90%;
+  margin: auto;
+}
+.card {
+  background-color: #fff;
+  padding: 2rem;
+  margin-top: 4rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 21px 26px 0px v.$light-primary-color;
+  @media screen and (min-width: 953px) {
+    margin-top: 2rem;
+  }
+  &.border-cyan {
+    border-left: 8px solid v.$primary-color;
+  }
+}
+.user {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  @media screen and (min-width: 953px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1.8rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid v.$dark-gray-cyan;
+    @media screen and (min-width: 953px) {
+      margin-top: 0;
+      margin-right: 1rem;
+      border-bottom: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+    .company {
+      &-logo {
+        &__wrapper {
+          display: inline;
+          @media screen and (min-width: 953px) {
+            @include v.flex-center;
+          }
+        }
+        margin-right: 2rem;
+        position: absolute;
+        top: 0;
+        transform: translateY(-50%) scale(0.8);
+        margin-left: -0.5rem;
+        @media screen and (min-width: 953px) {
+          position: relative;
+          transform: translateY(0);
+        }
+      }
+      &-infos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+      &-name {
+        font-size: 1rem;
+        font-weight: bold;
+        color: v.$primary-color;
+        margin-right: 1rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+      }
+      &-new,
+      &-featured {
+        font-size: 0.6rem;
+        font-weight: 700;
+        color: #fff;
+        padding: 0.5rem 0.7rem;
+        border-radius: 1rem;
+        background-color: v.$primary-color;
+        margin-right: 1rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+        display: flex;
+        align-items: center;
+      }
+      &-new {
+        background-color: v.$primary-color;
+      }
+      &-featured {
+        background-color: v.$very-dark-gray-cyan;
+      }
+    }
+    .position {
+      font-weight: 700;
+      color: v.$very-dark-gray-cyan;
+      margin-top: 1rem;
+    }
+    .other-desc {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      color: v.$dark-gray-cyan;
+      font-size: 0.8rem;
+      div {
+        margin-top: 0.2rem;
+        margin-bottom: 0.2rem;
+      }
+      .bullet {
+        height: 5px;
+        width: 5px;
+        border-radius: 50%;
+        background-color: v.$dark-gray-cyan;
+        margin-right: 0.75rem;
+        margin-left: 0.75rem;
+      }
+    }
+  }
+}
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  & button {
+    color: v.$primary-color;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    background-color: v.$grayish-cyan;
+    font-weight: 700;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    border: 0 none;
+    cursor: pointer;
+    &:hover {
+      background-color: v.$primary-color;
+      color: #fff;
+    }
+  }
+}
+.filters {
+  padding: 1rem 2rem;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  margin-top: -2.5rem;
+  border-radius: 0.5rem;
+  box-shadow: 0px 21px 26px 0px v.$light-primary-color;
+  &__container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-right: 1rem;
+  }
+  .filter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: v.$grayish-cyan;
+    color: v.$primary-color;
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    overflow: hidden;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    &-text {
+      padding: 0.5rem;
+      color: v.$primary-color;
+      font-weight: 700;
+    }
+    button {
+      background-color: v.$primary-color;
+      border: 0 none;
+      padding: 0.5rem 0.8rem;
+      cursor: pointer;
+      display: flex;
+      &:hover{
+        background-color: v.$very-dark-gray-cyan;
+      }
+    }
+  }
+  .clear-btn {
+    background-color: transparent;
+    color: v.$primary-color;
+    font-size: 0.8rem;
+    font-weight: 700;
+    border: 0 none;
+    cursor: pointer;
+  }
+}
