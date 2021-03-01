@@ -6,8 +6,6 @@
 
 [Frontend Mentor](https://www.frontendmentor.io) challenges allow you to improve your skills in a real-life workflow.
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
-
 ## The challenge
 
 To build out this job listing page and get it looking as close to the design as possible.
